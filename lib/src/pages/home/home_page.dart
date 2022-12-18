@@ -5,14 +5,8 @@ class PokeLocHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-          child: Text(
-        'Oi',
-        style: TextStyle(
-          fontSize: 30,
-        ),
-      )),
+    return Scaffold(
+      body: Container(),
     );
   }
 }
