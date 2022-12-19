@@ -6,7 +6,6 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         fontFamily: 'Montserrat',
         backgroundColor: const Color(0xffF2F2F2),
         primaryColor: const Color(0xff373635),
