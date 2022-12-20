@@ -1,18 +1,19 @@
+import 'package:desafio02/src/models/filter_model.dart';
 import 'package:flutter/material.dart';
 
-class ButtonWidget extends StatefulWidget {
-  final String text;
+class FilterButtonWidget extends StatefulWidget {
+  final FilterModel filterModel;
 
-  const ButtonWidget({
+  const FilterButtonWidget({
     Key? key,
-    required this.text,
+    required this.filterModel,
   }) : super(key: key);
 
   @override
-  State<ButtonWidget> createState() => _ButtonWidgetState();
+  State<FilterButtonWidget> createState() => _ButtonWidgetState();
 }
 
-class _ButtonWidgetState extends State<ButtonWidget> {
+class _ButtonWidgetState extends State<FilterButtonWidget> {
   @override
   Widget build(BuildContext context) {
     bool isSelected = true;
@@ -32,13 +33,13 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.catching_pokemon,
+              widget.filterModel.icon,
               size: 25,
               color: isSelected == true ? Colors.grey : Colors.white,
             ),
             const SizedBox(width: 10),
             Text(
-              widget.text,
+              widget.filterModel.text ?? '',
               style: TextStyle(
                 fontSize: 18,
                 color: isSelected == true ? Colors.black : Colors.white,

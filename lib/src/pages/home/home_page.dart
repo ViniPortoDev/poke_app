@@ -1,4 +1,5 @@
-import 'package:desafio02/src/design_patterns/button_widget.dart';
+import 'package:desafio02/src/controllers/home_controller.dart';
+import 'package:desafio02/src/pages/home/components/filter_button_component.dart';
 import 'package:flutter/material.dart';
 
 class PokeLocHomePage extends StatefulWidget {
@@ -11,7 +12,8 @@ class PokeLocHomePage extends StatefulWidget {
 class _PokeLocHomePageState extends State<PokeLocHomePage> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    HomeController controller = HomeController();
+
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -28,40 +30,14 @@ class _PokeLocHomePageState extends State<PokeLocHomePage> {
                 children: [
                   const SizedBox(height: 30),
                   SizedBox(
-                    width: size.width,
-                    child: SingleChildScrollView(
+                    height: 50,
+                    child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(18),
-                                ),
-                                child: const Icon(
-                                  Icons.filter_list,
-                                  size: 35,
-                                  color: Color(0xffC3C3C3),
-                                )),
-                            const SizedBox(width: 22),
-                            const ButtonWidget(text: 'Fire'),
-                            const SizedBox(width: 22),
-                            const ButtonWidget(text: 'water'),
-                            const SizedBox(width: 22),
-                            const ButtonWidget(text: 'Glass'),
-                            const SizedBox(width: 22),
-                            const ButtonWidget(text: 'Flying'),
-                            const SizedBox(width: 22),
-                            const ButtonWidget(text: 'Poison'),
-                            const SizedBox(width: 22),
-                            const ButtonWidget(text: 'Fighting'),
-                          ],
-                        ),
-                      ),
+                      itemCount: controller.filterList.length,
+                      itemBuilder: (context, index) {
+                        return FilterButtonWidget(
+                            filterModel: controller.filterList[index]);
+                      },
                     ),
                   )
                 ],
