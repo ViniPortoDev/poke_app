@@ -79,6 +79,9 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: assets\fonts\Montserrat.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets\fonts\Roboto.ttf        
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
