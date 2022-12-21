@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 
 class ListTileWidget extends StatelessWidget {
   final PokemonModel pokemons;
-  const ListTileWidget({Key? key, required this.pokemons}) : super(key: key);
+  const ListTileWidget({
+    Key? key,
+    required this.pokemons,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

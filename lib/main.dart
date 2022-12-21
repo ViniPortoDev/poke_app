@@ -10,7 +10,7 @@ void main() {
         backgroundColor: const Color(0xffF2F2F2),
         primaryColor: const Color(0xff373635),
       ),
-      home: const PokeLocHomePage(),
+      home: const PokemonHomePage(),
     ),
   );
 }

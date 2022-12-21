@@ -5,7 +5,6 @@ import '../models/pokemon_model.dart';
 
 class HomeController {
   List<FilterModel> filterList = [
-    FilterModel(id: 1, icon: Icons.display_settings_sharp),
     FilterModel(id: 2, icon: Icons.catching_pokemon, text: 'Fire'),
     FilterModel(id: 3, icon: Icons.catching_pokemon, text: 'Water'),
     FilterModel(id: 4, icon: Icons.catching_pokemon, text: 'Glass'),

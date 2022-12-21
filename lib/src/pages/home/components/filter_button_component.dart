@@ -7,7 +7,7 @@ class FilterButtonWidget extends StatefulWidget {
   FilterButtonWidget({
     Key? key,
     required this.filterModel,
-    required this.isSelected,
+    this.isSelected = false,
   }) : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         decoration: BoxDecoration(
-          color: widget.isSelected == true
+          color: widget.isSelected == false
               ? Colors.white
               : const Color(0xffFF5F50),
           borderRadius: BorderRadius.circular(18),
@@ -37,14 +37,14 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
             Icon(
               widget.filterModel.icon,
               size: 25,
-              color: widget.isSelected == true ? Colors.grey : Colors.white,
+              color: widget.isSelected == false ? Colors.grey : Colors.white,
             ),
             const SizedBox(width: 10),
             Text(
-              widget.filterModel.text ?? '',
+              widget.filterModel.text,
               style: TextStyle(
                 fontSize: 18,
-                color: widget.isSelected == true ? Colors.black : Colors.white,
+                color: widget.isSelected == false ? Colors.black : Colors.white,
               ),
             ),
           ],
