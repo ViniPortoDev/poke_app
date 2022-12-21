@@ -6,7 +6,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Montserrat',
+        fontFamily: 'Roboto',
         backgroundColor: const Color(0xffF2F2F2),
         primaryColor: const Color(0xff373635),
       ),
