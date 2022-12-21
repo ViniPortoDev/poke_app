@@ -1,5 +1,6 @@
 import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:desafio02/src/pages/home/components/filter_button_component.dart';
+import 'package:desafio02/src/pages/home/components/pokemons_listview.dart';
 import 'package:flutter/material.dart';
 
 class PokeLocHomePage extends StatefulWidget {
@@ -38,7 +39,7 @@ class _PokeLocHomePageState extends State<PokeLocHomePage> {
                         itemCount: controller.filterList.length,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: FilterButtonWidget(
                                 filterModel: controller.filterList[index],
                                 isSelected: true),
@@ -46,6 +47,10 @@ class _PokeLocHomePageState extends State<PokeLocHomePage> {
                         },
                       ),
                     ),
+                    SizedBox(
+                      height: size.height,
+                      child: PokemonsListView(),
+                    )
                   ],
                 ),
               )
