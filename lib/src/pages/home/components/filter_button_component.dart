@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 
 class FilterButtonWidget extends StatefulWidget {
   final FilterModel filterModel;
-
-  const FilterButtonWidget({
+  bool isSelected;
+  FilterButtonWidget({
     Key? key,
     required this.filterModel,
+    required this.isSelected,
   }) : super(key: key);
 
   @override
@@ -16,18 +17,19 @@ class FilterButtonWidget extends StatefulWidget {
 class _ButtonWidgetState extends State<FilterButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    bool isSelected = true;
     return InkWell(
       onTap: () {
         setState(() {
-          isSelected = !isSelected;
+          widget.isSelected = !widget.isSelected;
         });
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         decoration: BoxDecoration(
-          color: isSelected == true ? Colors.white : const Color(0xffFF5F50),
-          borderRadius: BorderRadius.circular(22),
+          color: widget.isSelected == true
+              ? Colors.white
+              : const Color(0xffFF5F50),
+          borderRadius: BorderRadius.circular(18),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,14 +37,14 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
             Icon(
               widget.filterModel.icon,
               size: 25,
-              color: isSelected == true ? Colors.grey : Colors.white,
+              color: widget.isSelected == true ? Colors.grey : Colors.white,
             ),
             const SizedBox(width: 10),
             Text(
               widget.filterModel.text ?? '',
               style: TextStyle(
                 fontSize: 18,
-                color: isSelected == true ? Colors.black : Colors.white,
+                color: widget.isSelected == true ? Colors.black : Colors.white,
               ),
             ),
           ],

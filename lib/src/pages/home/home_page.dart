@@ -12,38 +12,45 @@ class PokeLocHomePage extends StatefulWidget {
 class _PokeLocHomePageState extends State<PokeLocHomePage> {
   @override
   Widget build(BuildContext context) {
-    HomeController controller = HomeController();
+    var size = MediaQuery.of(context).size;
+    final controller = HomeController();
 
     return Scaffold(
       body: Container(
         color: Colors.white,
-        child: Column(
-          children: [
-            const AppBarWidget(),
-            Container(
-              height: 500,
-              decoration: BoxDecoration(
-                color: const Color(0xffF2F2F2),
-                borderRadius: BorderRadius.circular(22),
-              ),
-              child: Column(
-                children: [
-                  const SizedBox(height: 30),
-                  SizedBox(
-                    height: 50,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: controller.filterList.length,
-                      itemBuilder: (context, index) {
-                        return FilterButtonWidget(
-                            filterModel: controller.filterList[index]);
-                      },
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const AppBarWidget(),
+              Container(
+                height: size.height,
+                decoration: BoxDecoration(
+                  color: const Color(0xffF2F2F2),
+                  borderRadius: BorderRadius.circular(22),
+                ),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 30),
+                    SizedBox(
+                      height: 50,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: controller.filterList.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: FilterButtonWidget(
+                                filterModel: controller.filterList[index],
+                                isSelected: true),
+                          );
+                        },
+                      ),
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
