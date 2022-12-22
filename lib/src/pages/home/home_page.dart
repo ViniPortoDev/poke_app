@@ -19,40 +19,56 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        
-          centerTitle: true,
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                'Localização',
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12,
-                    color: Color(0xffC8C8C8)),
-              ),
-              Text(
-                'Parnaíba-PI, Brasil',
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: Colors.black),
-              ),
-            ],
+        elevation: 0,
+        toolbarHeight: 100,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 8),
+          child: InkWell(
+            onTap: () {},
+            child: Image.asset(
+              'assets/images/menu_icon.png',
+            ),
           ),
-          backgroundColor: Colors.white,
-          leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.menu_rounded,
-                color: Color(0xff6E6E6E),
-                size: 40,
-              ))),
+        ),
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              'Localização',
+              style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                  color: Color(0xffC8C8C8)),
+            ),
+            Text(
+              'Parnaíba-PI, Brasil',
+              style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                  color: Colors.black),
+            ),
+          ],
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: CircleAvatar(
+              child: ClipOval(
+                  child: Image.asset(
+                'assets/images/azul-caneta.jpg',
+                height: 40,
+                fit: BoxFit.cover,
+              )),
+            ),
+          ),
+        ],
+      ),
       body: Container(
         color: Colors.white,
         child: Column(
           children: [
-            //   const AppBarWidget(),
             Container(
               decoration: BoxDecoration(
                 color: const Color(0xffF2F2F2),
@@ -78,7 +94,7 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                   ),
                   const SizedBox(height: 30),
                   SizedBox(
-                    height: size.height - 190,
+                    height: size.height - 234,
                     child: ListView.builder(
                       itemCount: controller.pokemons.length,
                       itemBuilder: (context, index) {
@@ -91,61 +107,6 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                 ],
               ),
             )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 15,
-        right: 25,
-      ),
-      child: SizedBox(
-        height: 135,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu_rounded,
-                  color: Color(0xff6E6E6E),
-                  size: 40,
-                )),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'Localização',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12,
-                      color: Color(0xffC8C8C8)),
-                ),
-                Text(
-                  'Parnaíba-PI, Brasil',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      color: Colors.black),
-                ),
-              ],
-            ),
-            ClipOval(
-                child: Image.asset(
-              'assets/images/azul-caneta.jpg',
-              width: 50,
-              height: 50,
-              fit: BoxFit.cover,
-            ))
           ],
         ),
       ),

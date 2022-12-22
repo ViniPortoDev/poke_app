@@ -1,13 +1,20 @@
 import 'package:desafio02/src/models/pokemon_model.dart';
 import 'package:flutter/material.dart';
 
-class ListTileWidget extends StatelessWidget {
+class ListTileWidget extends StatefulWidget {
   final PokemonModel pokemons;
-  const ListTileWidget({
+  bool isSelected;
+  ListTileWidget({
     Key? key,
     required this.pokemons,
+    this.isSelected = false,
   }) : super(key: key);
 
+  @override
+  State<ListTileWidget> createState() => _ListTileWidgetState();
+}
+
+class _ListTileWidgetState extends State<ListTileWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,9 +27,11 @@ class ListTileWidget extends StatelessWidget {
         child: ListTile(
           onTap: () {},
           contentPadding: const EdgeInsets.all(12),
-          leading: Image.asset(pokemons.avatarImage),
+          leading: Image.asset(
+            widget.pokemons.avatarImage,
+          ),
           title: Text(
-            pokemons.name,
+            widget.pokemons.name,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           subtitle: Column(
@@ -31,14 +40,14 @@ class ListTileWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 8),
                 child: Text(
-                  pokemons.type,
+                  widget.pokemons.type,
                   style: const TextStyle(fontSize: 13, color: Colors.black),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
-                  pokemons.descripton,
+                  widget.pokemons.descripton,
                   style: const TextStyle(fontSize: 11),
                 ),
               ),
@@ -50,15 +59,24 @@ class ListTileWidget extends StatelessWidget {
                     size: 18,
                   ),
                   const SizedBox(width: 4),
-                  Text(pokemons.localization),
+                  Text(widget.pokemons.localization),
                 ],
               ),
             ],
           ),
-          trailing: const Icon(
-            Icons.catching_pokemon,
-            color: Colors.red,
-          ),
+          trailing: IconButton(
+              onPressed: () {
+                setState(() {
+                  widget.isSelected = !widget.isSelected;
+                });
+              },
+              icon: Icon(
+                widget.isSelected == false
+                    ? Icons.favorite_border
+                    : Icons.favorite,
+                color: widget.isSelected == false ? Colors.grey : Colors.red,
+                size: 30,
+              )),
         ),
       ),
     );
