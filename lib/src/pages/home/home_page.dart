@@ -1,7 +1,6 @@
 import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:desafio02/src/pages/home/components/filter_button_component.dart';
 import 'package:flutter/material.dart';
-
 import 'components/pokemons_list_tile_component.dart';
 
 class PokemonHomePage extends StatefulWidget {
