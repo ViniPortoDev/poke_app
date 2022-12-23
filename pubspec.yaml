@@ -36,7 +36,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
+  flutterando_analysis: ^0.0.2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -79,6 +80,9 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: assets\fonts\Montserrat.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets\fonts\Roboto.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
