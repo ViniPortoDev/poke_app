@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:desafio02/src/models/filter_model.dart';
 import 'package:flutter/material.dart';
 
