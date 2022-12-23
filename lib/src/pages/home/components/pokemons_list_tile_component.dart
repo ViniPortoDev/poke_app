@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:desafio02/routes/routes.dart';
 import 'package:desafio02/src/models/pokemon_model.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,9 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           borderRadius: BorderRadius.circular(22),
         ),
         child: ListTile(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, Routes.POKEINFO);
+          },
           contentPadding: const EdgeInsets.all(12),
           leading: Image.asset(
             widget.pokemons.avatarImage,
