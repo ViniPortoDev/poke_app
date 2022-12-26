@@ -15,7 +15,7 @@ class FindButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        height: 80,
+        height: 70,
         width: size.width * 0.5,
         decoration: const BoxDecoration(
             color: Color(0xffFF5F50),

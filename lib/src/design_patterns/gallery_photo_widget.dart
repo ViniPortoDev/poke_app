@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../models/pokemon_model.dart';
+
 class GalleryPhotosWidget extends StatelessWidget {
-  final String image1;
-  final String image2;
-  final String image3;
-  final String image4;
   const GalleryPhotosWidget({
     Key? key,
-    required this.image1,
-    required this.image2,
-    required this.image3,
-    required this.image4,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final arg = ModalRoute.of(context)?.settings.arguments as PokemonModel;
     return SizedBox(
-      height: 280,
+      height: 250,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,7 +22,7 @@ class GalleryPhotosWidget extends StatelessWidget {
               border: Border.all(color: const Color(0xffF2F2F2)),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Image.asset(image1),
+            child: Image.asset(arg.image1),
           ),
           Container(
             width: 60,
@@ -36,7 +31,7 @@ class GalleryPhotosWidget extends StatelessWidget {
               border: Border.all(color: const Color(0xffF2F2F2)),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Image.asset(image2),
+            child: Image.asset(arg.image2),
           ),
           Container(
             width: 60,
@@ -45,16 +40,31 @@ class GalleryPhotosWidget extends StatelessWidget {
               border: Border.all(color: const Color(0xffF2F2F2)),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Image.asset(image3),
+            child: Image.asset(arg.image3),
           ),
-          Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xffF2F2F2)),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Image.asset(image4),
+          Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              Container(
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(color: const Color(0xffF2F2F2)),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Image.asset(arg.image4),
+              ),
+              Container(
+                height: 50,
+                width: 60,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    gradient: LinearGradient(colors: [
+                      Color.fromARGB(0, 255, 255, 255),
+                      Colors.white,
+                    ], begin: Alignment.topRight)),
+              )
+            ],
           ),
         ],
       ),

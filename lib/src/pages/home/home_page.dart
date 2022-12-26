@@ -1,6 +1,7 @@
 import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:desafio02/src/pages/home/components/filter_button_component.dart';
 import 'package:flutter/material.dart';
+import '../../../routes/routes.dart';
 import 'components/pokemons_list_tile_component.dart';
 
 class PokemonHomePage extends StatefulWidget {
@@ -56,7 +57,7 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
             child: CircleAvatar(
               child: ClipOval(
                   child: Image.asset(
-                'assets/images/azul-caneta.jpg',
+                'assets/images/manoash_gomes.jpeg',
                 height: 40,
                 fit: BoxFit.cover,
               )),
@@ -98,6 +99,13 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                       itemCount: controller.pokemons.length,
                       itemBuilder: (context, index) {
                         return ListTileWidget(
+                          ontap: () {
+                            Navigator.pushNamed(
+                              context,
+                              Routes.POKEINFO,
+                              arguments: controller.pokemons[index],
+                            );
+                          },
                           pokemons: controller.pokemons[index],
                         );
                       },

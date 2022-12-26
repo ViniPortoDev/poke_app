@@ -23,6 +23,15 @@ class HomeController {
       descripton:
           'Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu. A semente cresce lentamente.',
       localization: '0.3 km de distância',
+      backGroundColor: Colors.green,
+      gender: Icons.male,
+      number: 'Nº 001',
+      image1:
+          'assets/images/bulbasaur/96-968122_bulbasaur-bulbasaur-de-may-png.png',
+      image2: 'assets/images/bulbasaur/bulba_frent.png',
+      image3:
+          'assets/images/bulbasaur/Bulbasaur-Pokemon-PNG-Clipart-Background.png',
+      image4: 'assets/images/bulbasaur/dck5gvr-d1a822f4-cb27-46b3-a0ad-5538b486b6f5.png',
     ),
     PokemonModel(
       id: 1,
@@ -32,6 +41,16 @@ class HomeController {
       descripton:
           'Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.',
       localization: '0.3 km de distância',
+      backGroundColor: Colors.orange,
+      gender: Icons.male,
+      number: 'Nº 004',
+      image1:
+          'assets/images/charmander/10-107584_charmander-charmander-png.png',
+      image2:
+          'assets/images/charmander/10-109344_charmander-png-hd-image-transparent-stock-charmander-pokemon.png',
+      image3:
+          'assets/images/charmander/okemon-charmander-png-pokemon-charmander-11563093928xx84qyh0bt.png',
+      image4: '',
     ),
     PokemonModel(
       id: 2,
@@ -41,6 +60,15 @@ class HomeController {
       descripton:
           'Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.',
       localization: '0.3 km de distância',
+      backGroundColor: Colors.blue,
+      gender: Icons.male,
+      number: 'Nº 007',
+      image1: 'assets/images/squirtle/23-231780_png-pack-naked-squirtle.png',
+      image2:
+          'assets/images/squirtle/135-1359971_squirtle-png-transparent-image-squirtle-png-png-download.png',
+      image3: 'assets/images/squirtle/580b57fcd9996e24bc43c32a.png',
+      image4:
+          'assets/images/squirtle/png-clipart-pokemon-x-and-y-pokemon-ruby-and-sapphire-pokemon-black-white-pikachu-squirtle-pikachu-fictional-character-pokemon.png',
     ),
     PokemonModel(
       id: 3,
@@ -50,6 +78,17 @@ class HomeController {
       descripton:
           'Muito dócil. Se atacado, muitas vezes chuta areia para se proteger, em vez de revidar.',
       localization: '1.4 km de distância',
+      backGroundColor: Colors.brown,
+      gender: Icons.female,
+      number: 'Nº 016',
+      image1:
+          'assets/images/pidgay/560-5608851_pidgeotto-png-transparent-png.png',
+      image2:
+          'assets/images/pidgay/kisspng-rooster-goose-cygnini-duck-clip-art-pidgey-5b338a4a77c705.png',
+      image3:
+          'assets/images/pidgay/png-clipart-chicken-pokemon-go-pidgeot-pidgey-galliformes-nintendo.png',
+      image4:
+          'assets/images/pidgay/png-transparent-pidgeotto-pidgey-johto-pokemon-shroomish-pokemon-galliformes-chicken-vertebrate.png',
     ),
     PokemonModel(
       id: 4,
@@ -59,6 +98,16 @@ class HomeController {
       descripton:
           'Quanto mais velho fica, mais cresce. À noite, envolve seu longo corpo nos galhos das árvores para descansar.',
       localization: '2.6 km de distância',
+      backGroundColor: Colors.purple,
+      gender: Icons.female,
+      number: 'Nº 023',
+      image1:
+          'assets/images/ekans/32-325633_023-ekans-used-glare-and-acid-ekans-transparent.png',
+      image2:
+          'assets/images/ekans/275-2759267_ekans-png-png-download-pokemon-hd-png-ekans.png',
+      image3:
+          'assets/images/ekans/807-8079779_lookit-my-art-neo-draws-all-the-pokemon.png',
+      image4: 'assets/images/ekans/ekans.png',
     ),
     PokemonModel(
       id: 5,
@@ -68,6 +117,14 @@ class HomeController {
       descripton:
           'Pikachu que pode gerar eletricidade poderosa tem bolsas nas bochechas que são extra macias e super elásticas.',
       localization: '14.8 km de distância',
+      backGroundColor: Colors.amber,
+      gender: Icons.male,
+      number: 'Nº 025',
+      image1: 'assets/images/pikachu/510775920002ed607ff0a5582932214a.png',
+      image2: 'assets/images/pikachu/Angry-Pikachu.png',
+      image3:
+          'assets/images/pikachu/png-transparent-hey-you-pikachu-pokemon-go-pokemon-x-and-y-pikachu-mammal-carnivoran-dog-like-mammal-thumbnail.png',
+      image4: 'assets/images/pikachu/Pokemon-Pikachu-PNG-Photo.png',
     ),
   ];
 }
