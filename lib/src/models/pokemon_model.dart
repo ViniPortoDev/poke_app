@@ -14,6 +14,7 @@ class PokemonModel {
   final String image2;
   final String image3;
   final String image4;
+  bool isFavorite = false;
   PokemonModel({
     required this.id,
     required this.name,

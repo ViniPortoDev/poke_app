@@ -1,11 +1,11 @@
 import 'package:desafio02/src/models/filter_model.dart';
 import 'package:flutter/material.dart';
-
+import 'package:line_icons/line_icons.dart';
 import '../models/pokemon_model.dart';
 
 class HomeController {
   List<FilterModel> filterList = [
-    FilterModel(id: 1, icon: Icons.tune, text: ''),
+    FilterModel(id: 1, icon: LineIcons.horizontalSliders, text: ''),
     FilterModel(id: 2, icon: Icons.catching_pokemon, text: 'Fire'),
     FilterModel(id: 3, icon: Icons.catching_pokemon, text: 'Water'),
     FilterModel(id: 4, icon: Icons.catching_pokemon, text: 'Glass'),
@@ -26,12 +26,10 @@ class HomeController {
       backGroundColor: Colors.green,
       gender: Icons.male,
       number: 'Nº 001',
-      image1:
-          'assets/images/bulbasaur/96-968122_bulbasaur-bulbasaur-de-may-png.png',
-      image2: 'assets/images/bulbasaur/bulba_frent.png',
-      image3:
-          'assets/images/bulbasaur/Bulbasaur-Pokemon-PNG-Clipart-Background.png',
-      image4: 'assets/images/bulbasaur/dck5gvr-d1a822f4-cb27-46b3-a0ad-5538b486b6f5.png',
+      image1: '',
+      image2: '',
+      image3: '',
+      image4: '',
     ),
     PokemonModel(
       id: 1,
@@ -44,13 +42,13 @@ class HomeController {
       backGroundColor: Colors.orange,
       gender: Icons.male,
       number: 'Nº 004',
-      image1:
-          'assets/images/charmander/10-107584_charmander-charmander-png.png',
+      image1: 'assets/images/charmander/C1.png',
       image2:
           'assets/images/charmander/10-109344_charmander-png-hd-image-transparent-stock-charmander-pokemon.png',
       image3:
           'assets/images/charmander/okemon-charmander-png-pokemon-charmander-11563093928xx84qyh0bt.png',
-      image4: '',
+      image4:
+          'assets/images/charmander/png-transparent-charmander-pokemon-others-mammal-orange-vertebrate.png',
     ),
     PokemonModel(
       id: 2,

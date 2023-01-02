@@ -1,15 +1,12 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:desafio02/src/models/filter_model.dart';
 import 'package:flutter/material.dart';
 
 class FilterButtonWidget extends StatefulWidget {
   final FilterModel filterModel;
-  bool isSelected;
-  FilterButtonWidget({
+
+  const FilterButtonWidget({
     Key? key,
     required this.filterModel,
-    this.isSelected = false,
   }) : super(key: key);
 
   @override
@@ -22,15 +19,15 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
     return InkWell(
       onTap: () {
         setState(() {
-          widget.isSelected = !widget.isSelected;
+          widget.filterModel.isSelected = !widget.filterModel.isSelected;
         });
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         decoration: BoxDecoration(
-          color: widget.isSelected == false
-              ? Colors.white
-              : const Color(0xffFF5F50),
+          color: widget.filterModel.isSelected
+              ? const Color(0xffFF5F50)
+              : Colors.white,
           borderRadius: BorderRadius.circular(18),
         ),
         child: Row(
@@ -38,8 +35,8 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
           children: [
             Icon(
               widget.filterModel.icon,
-              size: 25,
-              color: widget.isSelected == false ? Colors.grey : Colors.white,
+              size: 30,
+              color: widget.filterModel.isSelected ? Colors.white : Colors.grey,
             ),
             Visibility(
               visible: widget.filterModel.text == '' ? false : true,
@@ -49,7 +46,8 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
               widget.filterModel.text,
               style: TextStyle(
                 fontSize: 18,
-                color: widget.isSelected == false ? Colors.black : Colors.white,
+                color:
+                    widget.filterModel.isSelected ? Colors.white : Colors.black,
               ),
             ),
           ],

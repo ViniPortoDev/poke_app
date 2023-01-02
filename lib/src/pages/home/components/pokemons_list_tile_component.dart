@@ -1,17 +1,14 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:desafio02/src/models/pokemon_model.dart';
 import 'package:flutter/material.dart';
 
 class ListTileWidget extends StatefulWidget {
   final PokemonModel pokemons;
   final Function() ontap;
-  bool isSelected;
-  ListTileWidget({
+
+  const ListTileWidget({
     Key? key,
     required this.pokemons,
     required this.ontap,
-    this.isSelected = false,
   }) : super(key: key);
 
   @override
@@ -85,14 +82,14 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           trailing: IconButton(
               onPressed: () {
                 setState(() {
-                  widget.isSelected = !widget.isSelected;
+                  widget.pokemons.isFavorite = !widget.pokemons.isFavorite;
                 });
               },
               icon: Icon(
-                widget.isSelected == false
-                    ? Icons.favorite_border
-                    : Icons.favorite,
-                color: widget.isSelected == false ? Colors.grey : Colors.red,
+                widget.pokemons.isFavorite 
+                    ? Icons.favorite
+                    : Icons.favorite_border,
+                color: widget.pokemons.isFavorite  ? Colors.red : Colors.grey,
                 size: 30,
               )),
         ),

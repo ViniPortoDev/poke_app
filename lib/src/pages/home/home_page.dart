@@ -1,6 +1,8 @@
 import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:desafio02/src/pages/home/components/filter_button_component.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
 import '../../../routes/routes.dart';
 import 'components/pokemons_list_tile_component.dart';
 
@@ -25,10 +27,12 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
         backgroundColor: Colors.white,
         leading: Padding(
           padding: const EdgeInsets.only(left: 8),
-          child: InkWell(
-            onTap: () {},
-            child: Image.asset(
-              'assets/images/menu_icon.png',
+          child: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              LineIcons.bars,
+              size: 40,
+              color: Color(0xff6E6E6E),
             ),
           ),
         ),
