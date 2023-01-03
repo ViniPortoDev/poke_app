@@ -23,13 +23,17 @@ class HomeController {
       descripton:
           'Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu. A semente cresce lentamente.',
       localization: '0.3 km de distância',
-      backGroundColor: Colors.green,
-      gender: Icons.male,
+      backgroundColor: 'assets/images/backgrounds/fundo_verde.png',
+      backgroundAvatarColor: Colors.green,
+      gender: PokemonGender.male,
       number: 'Nº 001',
-      image1: '',
-      image2: '',
-      image3: '',
-      image4: '',
+      image1:
+          'assets/images/bulbasaur/dck5gvr-d1a822f4-cb27-46b3-a0ad-5538b486b6f5.png',
+      image2: 'assets/images/bulbasaur/bulba_frent.png',
+      image3:
+          'assets/images/bulbasaur/Bulbasaur-Pokemon-PNG-Clipart-Background.png',
+      image4:
+          'assets/images/bulbasaur/96-968122_bulbasaur-bulbasaur-de-may-png.png',
     ),
     PokemonModel(
       id: 1,
@@ -39,16 +43,17 @@ class HomeController {
       descripton:
           'Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.',
       localization: '0.3 km de distância',
-      backGroundColor: Colors.orange,
+      backgroundColor:'assets/images/backgrounds/fundo_laranja.png',
+      backgroundAvatarColor: Colors.orange,
       gender: Icons.male,
       number: 'Nº 004',
-      image1: 'assets/images/charmander/C1.png',
+      image1:
+          'assets/images/charmander/okemon-charmander-png-pokemon-charmander-11563093928xx84qyh0bt.png',
       image2:
           'assets/images/charmander/10-109344_charmander-png-hd-image-transparent-stock-charmander-pokemon.png',
       image3:
-          'assets/images/charmander/okemon-charmander-png-pokemon-charmander-11563093928xx84qyh0bt.png',
-      image4:
           'assets/images/charmander/png-transparent-charmander-pokemon-others-mammal-orange-vertebrate.png',
+      image4: 'assets/images/charmander/C1.png',
     ),
     PokemonModel(
       id: 2,
@@ -58,13 +63,14 @@ class HomeController {
       descripton:
           'Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.',
       localization: '0.3 km de distância',
-      backGroundColor: Colors.blue,
+      backgroundColor: 'assets/images/backgrounds/fundo_azul.png',
+      backgroundAvatarColor: Colors.blue,
       gender: Icons.male,
       number: 'Nº 007',
-      image1: 'assets/images/squirtle/23-231780_png-pack-naked-squirtle.png',
-      image2:
+      image1: 'assets/images/squirtle/580b57fcd9996e24bc43c32a.png',
+      image2: 'assets/images/squirtle/23-231780_png-pack-naked-squirtle.png',
+      image3:
           'assets/images/squirtle/135-1359971_squirtle-png-transparent-image-squirtle-png-png-download.png',
-      image3: 'assets/images/squirtle/580b57fcd9996e24bc43c32a.png',
       image4:
           'assets/images/squirtle/png-clipart-pokemon-x-and-y-pokemon-ruby-and-sapphire-pokemon-black-white-pikachu-squirtle-pikachu-fictional-character-pokemon.png',
     ),
@@ -76,7 +82,8 @@ class HomeController {
       descripton:
           'Muito dócil. Se atacado, muitas vezes chuta areia para se proteger, em vez de revidar.',
       localization: '1.4 km de distância',
-      backGroundColor: Colors.brown,
+      backgroundColor: 'assets/images/backgrounds/fundo_marrom.png',
+      backgroundAvatarColor: Colors.brown,
       gender: Icons.female,
       number: 'Nº 016',
       image1:
@@ -96,7 +103,8 @@ class HomeController {
       descripton:
           'Quanto mais velho fica, mais cresce. À noite, envolve seu longo corpo nos galhos das árvores para descansar.',
       localization: '2.6 km de distância',
-      backGroundColor: Colors.purple,
+      backgroundColor: 'assets/images/backgrounds/fundo_roxo.png',
+      backgroundAvatarColor: Colors.purple,
       gender: Icons.female,
       number: 'Nº 023',
       image1:
@@ -115,7 +123,8 @@ class HomeController {
       descripton:
           'Pikachu que pode gerar eletricidade poderosa tem bolsas nas bochechas que são extra macias e super elásticas.',
       localization: '14.8 km de distância',
-      backGroundColor: Colors.amber,
+      backgroundColor: 'assets/images/backgrounds/fundo_amarelo.png',
+      backgroundAvatarColor: Colors.yellow,
       gender: Icons.male,
       number: 'Nº 025',
       image1: 'assets/images/pikachu/510775920002ed607ff0a5582932214a.png',

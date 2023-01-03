@@ -1,6 +1,6 @@
-import 'package:desafio02/src/design_patterns/find_button_widget.dart';
+import 'package:desafio02/src/widgets/find_button_widget.dart';
 import 'package:flutter/material.dart';
-import '../../design_patterns/gallery_photo_widget.dart';
+import '../../widgets/gallery_photo_widget.dart';
 import '../../models/pokemon_model.dart';
 
 class PokeinfoPage extends StatefulWidget {
@@ -76,11 +76,11 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                       style: const TextStyle(
                           fontSize: 32, fontWeight: FontWeight.bold),
                     ),
-                    Icon(
+                   /* Icon(
                       arg.gender,
                       size: 35,
                       color: const Color(0xffCBCBCB),
-                    )
+                    )*/
                   ],
                 ),
               ),
@@ -131,23 +131,15 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   children: [
                     const GalleryPhotosWidget(),
                     Stack(
-                      alignment: Alignment.center,
+                      alignment: Alignment.centerRight,
                       children: [
-                        Positioned(
-                          left: 30,
-                          top: 0,
-                          bottom: 0,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: arg.backGroundColor,
-                                borderRadius: BorderRadius.circular(500)),
-                            height: 300,
-                            width: 200,
-                          ),
+                        Image.asset(
+                          arg.backgroundColor,
+                          height: 320,
                         ),
                         Image.asset(
                           arg.avatarImage,
-                          height: 200,
+                          height: 250,
                         ),
                       ],
                     )
@@ -173,7 +165,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   ],
                 ),
               ),
-           //   Expanded(child: Container()),
+              //   Expanded(child: Container()),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [

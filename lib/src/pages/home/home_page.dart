@@ -1,10 +1,9 @@
 import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:desafio02/src/pages/home/components/filter_button_component.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 import '../../../routes/routes.dart';
-import 'components/pokemons_list_tile_component.dart';
+import 'components/list_tile_component.dart';
 
 class PokemonHomePage extends StatefulWidget {
   const PokemonHomePage({Key? key}) : super(key: key);
@@ -102,7 +101,7 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                     child: ListView.builder(
                       itemCount: controller.pokemons.length,
                       itemBuilder: (context, index) {
-                        return ListTileWidget(
+                        return ListTileComponent(
                           ontap: () {
                             Navigator.pushNamed(
                               context,
