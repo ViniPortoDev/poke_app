@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
-enum PokemonGender {male, female,undefined}
+enum PokemonGender { male, female, undefined }
+
+enum BackgroundAvatarColor { orange, green, blue, brown, purple, yellow }
+
 class PokemonModel {
   final int id;
   final String name;
@@ -8,13 +10,10 @@ class PokemonModel {
   final String descripton;
   final String localization;
   final String backgroundColor;
-  final Color backgroundAvatarColor;
+  final BackgroundAvatarColor backgroundAvatarColor;
   final String number;
   final PokemonGender gender;
-  final String image1;
-  final String image2;
-  final String image3;
-  final String image4;
+  final List<String> galleryImages;
   bool isFavorite;
   PokemonModel({
     required this.id,
@@ -24,13 +23,10 @@ class PokemonModel {
     required this.descripton,
     required this.localization,
     required this.backgroundColor,
-     required this.backgroundAvatarColor,
+    required this.backgroundAvatarColor,
     required this.number,
     required this.gender,
-    required this.image1,
-    required this.image2,
-    required this.image3,
-    required this.image4,
+    required this.galleryImages,
     this.isFavorite = false,
   });
 }

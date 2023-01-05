@@ -6,7 +6,7 @@ import 'src/pages/home/home_page.dart';
 void main() {
   runApp(
     MaterialApp(
-      initialRoute: Routes.HOME,
+      initialRoute: Routes.home,
       routes: Pages.pages,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

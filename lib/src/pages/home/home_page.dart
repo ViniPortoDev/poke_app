@@ -1,9 +1,10 @@
 import 'package:desafio02/src/controllers/home_controller.dart';
-import 'package:desafio02/src/pages/home/components/filter_button_component.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import '../../../routes/routes.dart';
-import 'components/list_tile_component.dart';
+import '../../widgets/filter_button_widget.dart';
+import '../../widgets/list_tile_widget.dart';
+
 
 class PokemonHomePage extends StatefulWidget {
   const PokemonHomePage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class PokemonHomePage extends StatefulWidget {
 class _PokemonHomePageState extends State<PokemonHomePage> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     final controller = HomeController();
 
     return Scaffold(
@@ -43,14 +44,14 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
               style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 12,
-                  color: Color(0xffC8C8C8)),
+                  color: Color(0xffC8C8C8),),
             ),
             Text(
               'Parnaíba-PI, Brasil',
               style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
-                  color: Colors.black),
+                  color: Colors.black,),
             ),
           ],
         ),
@@ -63,7 +64,7 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                 'assets/images/manoash_gomes.jpeg',
                 height: 40,
                 fit: BoxFit.cover,
-              )),
+              ),),
             ),
           ),
         ],
@@ -101,15 +102,15 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                     child: ListView.builder(
                       itemCount: controller.pokemons.length,
                       itemBuilder: (context, index) {
-                        return ListTileComponent(
+                        return ListTileWidget(
                           ontap: () {
                             Navigator.pushNamed(
                               context,
-                              Routes.POKEINFO,
+                              Routes.pokeinfo,
                               arguments: controller.pokemons[index],
                             );
                           },
-                          pokemons: controller.pokemons[index],
+                          pokemon: controller.pokemons[index],
                         );
                       },
                     ),

@@ -1,7 +1,7 @@
 import 'package:desafio02/src/widgets/find_button_widget.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/gallery_photo_widget.dart';
 import '../../models/pokemon_model.dart';
+import '../../widgets/picture_frames_widget.dart';
 
 class PokeinfoPage extends StatefulWidget {
   const PokeinfoPage({
@@ -15,7 +15,7 @@ class PokeinfoPage extends StatefulWidget {
 class _PokeinfoPageState extends State<PokeinfoPage> {
   @override
   Widget build(BuildContext context) {
-    final arg = ModalRoute.of(context)?.settings.arguments as PokemonModel;
+    final pokemon = ModalRoute.of(context)?.settings.arguments as PokemonModel;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -41,19 +41,23 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   height: 45,
                   width: 45,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xffFFE6E3)),
+                    borderRadius: BorderRadius.circular(16),
+                    color: const Color(0xffFFE6E3),
+                  ),
                   child: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          arg.isFavorite = !arg.isFavorite;
-                        });
-                      },
-                      icon: Icon(
-                        arg.isFavorite ? Icons.favorite : Icons.favorite_border,
-                        color: arg.isFavorite ? Colors.red : Colors.grey,
-                        size: 30,
-                      )),
+                    onPressed: () {
+                      setState(() {
+                        pokemon.isFavorite = !pokemon.isFavorite;
+                      });
+                    },
+                    icon: Icon(
+                      pokemon.isFavorite
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                      color: pokemon.isFavorite ? Colors.red : Colors.grey,
+                      size: 30,
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -72,15 +76,19 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      arg.name,
+                      pokemon.name,
                       style: const TextStyle(
-                          fontSize: 32, fontWeight: FontWeight.bold),
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                   /* Icon(
-                      arg.gender,
+                    // gender..............
+
+                    const Icon(
+                      Icons.access_alarm_sharp,
                       size: 35,
                       color: const Color(0xffCBCBCB),
-                    )*/
+                    )
                   ],
                 ),
               ),
@@ -91,14 +99,18 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      arg.type,
+                      pokemon.type,
                       style: const TextStyle(
-                          fontSize: 17, fontWeight: FontWeight.w500),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     Text(
-                      arg.number,
+                      pokemon.number,
                       style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w400),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ],
                 ),
@@ -115,7 +127,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      arg.localization,
+                      pokemon.localization,
                       style: const TextStyle(
                         color: Color(0xffB0B0B0),
                       ),
@@ -129,16 +141,27 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const GalleryPhotosWidget(),
+                    SizedBox(
+                      height: 250,
+                      width: 50,
+                      child: ListView.builder(
+                        itemCount: pokemon.galleryImages.length ,
+                        itemBuilder: (context, index) {
+                          return PictureFramesWidget(
+                            images: pokemon.galleryImages[index],
+                          );
+                        },
+                      ),
+                    ),
                     Stack(
                       alignment: Alignment.centerRight,
                       children: [
                         Image.asset(
-                          arg.backgroundColor,
+                          pokemon.backgroundColor,
                           height: 320,
                         ),
                         Image.asset(
-                          arg.avatarImage,
+                          pokemon.avatarImage,
                           height: 250,
                         ),
                       ],
@@ -159,7 +182,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      arg.descripton,
+                      pokemon.descripton,
                       style: const TextStyle(color: Color(0xffB0B0B0)),
                     )
                   ],
@@ -170,7 +193,9 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
                   FindButtonWidget(
-                      icon: Icons.catching_pokemon_outlined, text: 'Encontrar'),
+                    icon: Icons.catching_pokemon_outlined,
+                    text: 'Encontrar',
+                  )
                 ],
               )
             ],

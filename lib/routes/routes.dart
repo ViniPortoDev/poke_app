@@ -1,6 +1,6 @@
 
 
 class Routes {
-  static const POKEINFO = '/pokeinfo';
-  static const HOME = '/';
+  static const pokeinfo = '/pokeinfo';
+  static const home = '/';
 }
