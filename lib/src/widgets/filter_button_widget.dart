@@ -39,7 +39,7 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
               color: widget.filterModel.isSelected ? Colors.white : Colors.grey,
             ),
             Visibility(
-              visible: widget.filterModel.text == '' ? false : true,
+              visible: widget.filterModel.text.isNotEmpty || false,
               child: const SizedBox(width: 10),
             ),
             Text(

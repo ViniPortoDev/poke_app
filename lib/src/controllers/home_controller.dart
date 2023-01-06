@@ -21,8 +21,7 @@ class HomeController {
       avatarImage: 'assets/images/Bulbasaur.png',
       type: 'Glass/Poison',
       descripton: '''
-Há uma semente de planta em suas costas desde o dia em que este Pokémon 
-          nasceu. A semente cresce lentamente.''',
+Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu. A semente cresce lentamente.''',
       localization: '0.3 km de distância',
       backgroundColor: 'assets/images/backgrounds/fundo_verde.png',
       backgroundAvatarColor: BackgroundAvatarColor.green,
@@ -41,7 +40,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon
       avatarImage: 'assets/images/Charmander.png',
       type: 'Fire',
       descripton:
-          'Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.',
+          '''Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.''',
       localization: '0.3 km de distância',
       backgroundColor: 'assets/images/backgrounds/fundo_laranja.png',
       backgroundAvatarColor: BackgroundAvatarColor.orange,
@@ -60,7 +59,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon
       avatarImage: 'assets/images/Squirtle.png',
       type: 'Water',
       descripton:
-          'Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.',
+          '''Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.''',
       localization: '0.3 km de distância',
       backgroundColor: 'assets/images/backgrounds/fundo_azul.png',
       backgroundAvatarColor: BackgroundAvatarColor.blue,
@@ -79,7 +78,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon
       avatarImage: 'assets/images/Pidgey.png',
       type: 'Flying/Normal',
       descripton:
-          'Muito dócil. Se atacado, muitas vezes chuta areia para se proteger, em vez de revidar.',
+          '''Muito dócil. Se atacado, muitas vezes chuta areia para se proteger, em vez de revidar.''',
       localization: '1.4 km de distância',
       backgroundColor: 'assets/images/backgrounds/fundo_marrom.png',
       backgroundAvatarColor: BackgroundAvatarColor.brown,
@@ -117,7 +116,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon
       avatarImage: 'assets/images/Pikachu.png',
       type: 'Eletric',
       descripton:
-          'Pikachu que pode gerar eletricidade poderosa tem bolsas nas bochechas que são extra macias e super elásticas.',
+          '''Pikachu que pode gerar eletricidade poderosa tem bolsas nas bochechas que são extra macias e super elásticas.''',
       localization: '14.8 km de distância',
       backgroundColor: 'assets/images/backgrounds/fundo_amarelo.png',
       backgroundAvatarColor: BackgroundAvatarColor.yellow,

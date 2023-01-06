@@ -15,7 +15,12 @@ class PokeinfoPage extends StatefulWidget {
 class _PokeinfoPageState extends State<PokeinfoPage> {
   @override
   Widget build(BuildContext context) {
-    final pokemon = ModalRoute.of(context)?.settings.arguments as PokemonModel;
+    late final PokemonModel pokemon;
+    final arguments = ModalRoute.of(context)?.settings.arguments;
+    if (arguments != null) {
+      pokemon = arguments as PokemonModel;
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -82,10 +87,10 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    // gender..............
-
-                    const Icon(
-                      Icons.access_alarm_sharp,
+                    Icon(
+                      pokemon.gender == PokemonGender.male
+                          ? Icons.male
+                          : Icons.female,
                       size: 35,
                       color: const Color(0xffCBCBCB),
                     )
@@ -141,17 +146,36 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
-                      height: 250,
-                      width: 50,
-                      child: ListView.builder(
-                        itemCount: pokemon.galleryImages.length ,
-                        itemBuilder: (context, index) {
-                          return PictureFramesWidget(
-                            images: pokemon.galleryImages[index],
-                          );
-                        },
-                      ),
+                    Stack(
+                      alignment: Alignment.bottomLeft,
+                      children: [
+                        SizedBox(
+                          height: 250,
+                          width: 50,
+                          child: ListView.builder(
+                            itemCount: pokemon.galleryImages.length,
+                            itemBuilder: (context, index) {
+                              return PictureFramesWidget(
+                                images: pokemon.galleryImages[index],
+                              );
+                            },
+                          ),
+                        ),
+                        Container(
+                          width: 60,
+                          height: 20,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(0, 255, 255, 255),
+                                Colors.white,
+                              ],
+                              begin: Alignment.topRight,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Stack(
                       alignment: Alignment.centerRight,
@@ -188,7 +212,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   ],
                 ),
               ),
-              //   Expanded(child: Container()),
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [

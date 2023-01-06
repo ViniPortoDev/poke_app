@@ -1,4 +1,4 @@
-enum PokemonGender { male, female, undefined }
+enum PokemonGender { male, female }
 
 enum BackgroundAvatarColor { orange, green, blue, brown, purple, yellow }
 

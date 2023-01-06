@@ -64,8 +64,8 @@ class _ListTileWidgetState extends State<ListTileWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                height: 120,
-                width: 120,
+                height: 135,
+                width: 130,
                 decoration: BoxDecoration(
                   color: backgroundColor,
                   borderRadius: BorderRadius.circular(22),
@@ -77,7 +77,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 6),
                     Text(
                       widget.pokemon.name,
                       style: const TextStyle(
