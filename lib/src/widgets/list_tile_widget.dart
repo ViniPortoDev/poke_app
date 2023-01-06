@@ -21,27 +21,27 @@ class _ListTileWidgetState extends State<ListTileWidget> {
     super.initState();
     switch (widget.pokemon.backgroundAvatarColor) {
       case BackgroundAvatarColor.green:
-        backgroundColor = Colors.green;
+        backgroundColor = Colors.green[100]!;
 
         break;
       case BackgroundAvatarColor.blue:
-        backgroundColor = Colors.blue;
+        backgroundColor = Colors.blue[100]!;
 
         break;
       case BackgroundAvatarColor.brown:
-        backgroundColor = Colors.brown;
+        backgroundColor = Colors.brown[200]!;
 
         break;
       case BackgroundAvatarColor.orange:
-        backgroundColor = Colors.orange;
+        backgroundColor = Colors.orange[200]!;
 
         break;
       case BackgroundAvatarColor.purple:
-        backgroundColor = Colors.purple;
+        backgroundColor = Colors.purple[100]!;
 
         break;
       case BackgroundAvatarColor.yellow:
-        backgroundColor = Colors.yellow;
+        backgroundColor = Colors.yellow[200]!;
 
         break;
     }
@@ -63,14 +63,30 @@ class _ListTileWidgetState extends State<ListTileWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                height: 135,
-                width: 130,
-                decoration: BoxDecoration(
-                  color: backgroundColor,
-                  borderRadius: BorderRadius.circular(22),
-                ),
-                child: Image.asset(widget.pokemon.avatarImage),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    height: 135,
+                    width: 130,
+                    decoration: BoxDecoration(
+                      color: backgroundColor,
+                      borderRadius: BorderRadius.circular(22),
+                    ),
+                    child: Image.asset(widget.pokemon.avatarImage),
+                  ),
+                  Positioned(
+                    bottom: 10,
+                    child: Container(
+                      width: 110,
+                      height: 5,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(36),
+                        boxShadow: const [BoxShadow(blurRadius: 10)],
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8),

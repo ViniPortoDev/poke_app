@@ -184,6 +184,22 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                           pokemon.backgroundColor,
                           height: 320,
                         ),
+                        Positioned(
+                          bottom: 60,
+                          right: 10,
+                          child: Container(
+                            width: 200,
+                            height: 5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(250),
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 10,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
                         Image.asset(
                           pokemon.avatarImage,
                           height: 250,
