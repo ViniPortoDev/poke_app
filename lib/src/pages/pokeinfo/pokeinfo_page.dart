@@ -1,10 +1,12 @@
+import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:desafio02/src/widgets/find_button_widget.dart';
 import 'package:flutter/material.dart';
 import '../../models/pokemon_model.dart';
 import '../../widgets/picture_frames_widget.dart';
 
 class PokeinfoPage extends StatefulWidget {
-  const PokeinfoPage({
+  final controller = HomeController();
+  PokeinfoPage({
     Key? key,
   }) : super(key: key);
 
@@ -144,26 +146,30 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 24),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Stack(
                       alignment: Alignment.bottomLeft,
                       children: [
                         SizedBox(
-                          height: 250,
-                          width: 50,
-                          child: ListView.builder(
-                            itemCount: pokemon.galleryImages.length,
-                            itemBuilder: (context, index) {
-                              return PictureFramesWidget(
-                                images: pokemon.galleryImages[index],
-                              );
-                            },
+                          height: 300,
+                          width: 70,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 24),
+                            child: ListView.builder(
+                              itemCount: pokemon.galleryImages.length,
+                              itemBuilder: (context, index) {
+                                return PictureFramesWidget(
+                                  images: pokemon.galleryImages[index],
+                                );
+                              },
+                            ),
                           ),
                         ),
                         Container(
-                          width: 60,
-                          height: 20,
+                          width: 70,
+                          height: 6,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             gradient: LinearGradient(
@@ -177,34 +183,48 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                         ),
                       ],
                     ),
-                    Stack(
-                      alignment: Alignment.centerRight,
-                      children: [
-                        Image.asset(
-                          pokemon.backgroundColor,
-                          height: 320,
-                        ),
-                        Positioned(
-                          bottom: 60,
-                          right: 10,
-                          child: Container(
-                            width: 200,
-                            height: 5,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(250),
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 10,
-                                )
-                              ],
+                    SizedBox(
+                      height: 350,
+                      child: Stack(
+                        alignment: Alignment.centerRight,
+                        children: [
+                          Positioned(
+                            left: 0,
+                            child: Container(
+                              height: 350,
+                              width: 350,
+                              decoration: BoxDecoration(
+                                color: widget.controller.getColor(pokemon),
+                                borderRadius: BorderRadius.circular(500),
+                              ),
                             ),
                           ),
-                        ),
-                        Image.asset(
-                          pokemon.avatarImage,
-                          height: 250,
-                        ),
-                      ],
+                          Positioned(
+                            bottom: 55,
+                            right: 0,
+                            child: Container(
+                              width: 210,
+                              height: 55,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(500),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color.fromARGB(52, 0, 0, 0),
+                                    blurRadius: 10,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Image.asset(
+                            pokemon.avatarImage,
+                            height: 250,
+                            width: 250,
+                            cacheWidth: 240,
+                            alignment: Alignment.centerRight,
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),

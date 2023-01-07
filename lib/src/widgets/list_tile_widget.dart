@@ -1,10 +1,12 @@
+import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import '../models/pokemon_model.dart';
 
 class ListTileWidget extends StatefulWidget {
+  final controller = HomeController();
   final PokemonModel pokemon;
   final Function() ontap;
-  const ListTileWidget({
+  ListTileWidget({
     Key? key,
     required this.pokemon,
     required this.ontap,
@@ -15,38 +17,6 @@ class ListTileWidget extends StatefulWidget {
 }
 
 class _ListTileWidgetState extends State<ListTileWidget> {
-  late final Color backgroundColor;
-  @override
-  void initState() {
-    super.initState();
-    switch (widget.pokemon.backgroundAvatarColor) {
-      case BackgroundAvatarColor.green:
-        backgroundColor = Colors.green[100]!;
-
-        break;
-      case BackgroundAvatarColor.blue:
-        backgroundColor = Colors.blue[100]!;
-
-        break;
-      case BackgroundAvatarColor.brown:
-        backgroundColor = Colors.brown[200]!;
-
-        break;
-      case BackgroundAvatarColor.orange:
-        backgroundColor = Colors.orange[200]!;
-
-        break;
-      case BackgroundAvatarColor.purple:
-        backgroundColor = Colors.purple[100]!;
-
-        break;
-      case BackgroundAvatarColor.yellow:
-        backgroundColor = Colors.yellow[200]!;
-
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -70,7 +40,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                     height: 135,
                     width: 130,
                     decoration: BoxDecoration(
-                      color: backgroundColor,
+                      color: widget.controller.getColor(widget.pokemon),
                       borderRadius: BorderRadius.circular(22),
                     ),
                     child: Image.asset(widget.pokemon.avatarImage),

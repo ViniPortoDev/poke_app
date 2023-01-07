@@ -31,7 +31,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu
         'assets/images/bulbasaur/dck5gvr-d1a822f4-cb27-46b3-a0ad-5538b486b6f5.png',
         'assets/images/bulbasaur/bulba_frent.png',
         'assets/images/bulbasaur/Bulbasaur-Pokemon-PNG-Clipart-Background.png',
-        'assets/images/bulbasaur/96-968122_bulbasaur-bulbasaur-de-may-png.png',
+        'assets/images/bulbasaur/dck5gvr-d1a822f4-cb27-46b3-a0ad-5538b486b6f5.png',
       ],
     ),
     PokemonModel(
@@ -50,7 +50,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu
         'assets/images/charmander/okemon-charmander-png-pokemon-charmander-11563093928xx84qyh0bt.png',
         'assets/images/charmander/10-109344_charmander-png-hd-image-transparent-stock-charmander-pokemon.png',
         'assets/images/charmander/png-transparent-charmander-pokemon-others-mammal-orange-vertebrate.png',
-        'assets/images/charmander/C1.png',
+        'assets/images/charmander/10-109344_charmander-png-hd-image-transparent-stock-charmander-pokemon.png',
       ],
     ),
     PokemonModel(
@@ -88,7 +88,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu
         'assets/images/pidgay/560-5608851_pidgeotto-png-transparent-png.png',
         'assets/images/pidgay/kisspng-rooster-goose-cygnini-duck-clip-art-pidgey-5b338a4a77c705.png',
         'assets/images/pidgay/png-clipart-chicken-pokemon-go-pidgeot-pidgey-galliformes-nintendo.png',
-        'assets/images/pidgay/png-transparent-pidgeotto-pidgey-johto-pokemon-shroomish-pokemon-galliformes-chicken-vertebrate.png',
+        'assets/images/pidgay/560-5608851_pidgeotto-png-transparent-png.png',
       ],
     ),
     PokemonModel(
@@ -130,4 +130,25 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu
       ],
     ),
   ];
+  Color getColor(PokemonModel pokemons) {
+    switch (pokemons.backgroundAvatarColor) {
+      case BackgroundAvatarColor.green:
+        return Colors.green[100]!;
+
+      case BackgroundAvatarColor.blue:
+        return Colors.blue[100]!;
+
+      case BackgroundAvatarColor.brown:
+        return Colors.brown[200]!;
+
+      case BackgroundAvatarColor.orange:
+        return Colors.orange[200]!;
+
+      case BackgroundAvatarColor.purple:
+        return Colors.purple[100]!;
+
+      case BackgroundAvatarColor.yellow:
+        return Colors.yellow[200]!;
+    }
+  }
 }

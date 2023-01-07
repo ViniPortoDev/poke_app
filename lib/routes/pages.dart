@@ -7,6 +7,6 @@ import '../src/controllers/home_controller.dart';
 class Pages {
   static final controller = HomeController();
   static Map<String, Widget Function(BuildContext)> pages = {
-    Routes.pokeinfo: (context) => const PokeinfoPage(),
+    Routes.pokeinfo: (context) =>  PokeinfoPage(),
   };
 }
