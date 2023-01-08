@@ -20,57 +20,54 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
 
     return Scaffold(
       appBar: const AppBarWidget(),
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffF2F2F2),
-                borderRadius: BorderRadius.circular(22),
-              ),
-              child: Column(
-                children: [
-                  const SizedBox(height: 30),
-                  SizedBox(
-                    height: 50,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: controller.filterList.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(left: 18),
-                          child: FilterButtonWidget(
-                            filterModel: controller.filterList[index],
-                          ),
-                        );
-                      },
-                    ),
+      body: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: const Color(0xffF2F2F2),
+              borderRadius: BorderRadius.circular(22),
+            ),
+            child: Column(
+              children: [
+                const SizedBox(height: 30),
+                SizedBox(
+                  height: 50,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: controller.filterList.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 18),
+                        child: FilterButtonWidget(
+                          filterModel: controller.filterList[index],
+                        ),
+                      );
+                    },
                   ),
-                  const SizedBox(height: 30),
-                  SizedBox(
-                    height: size.height - 234,
-                    child: ListView.builder(
-                      itemCount: controller.pokemons.length,
-                      itemBuilder: (context, index) {
-                        return ListTileWidget(
-                          ontap: () {
-                            Navigator.pushNamed(
-                              context,
-                              Routes.pokeinfo,
-                              arguments: controller.pokemons[index],
-                            );
-                          },
-                          pokemon: controller.pokemons[index],
-                        );
-                      },
-                    ),
+                ),
+                const SizedBox(height: 30),
+                SizedBox(
+                  height: size.height - 234,
+                  child: ListView.builder(
+                    itemCount: controller.pokemons.length,
+                    itemBuilder: (context, index) {
+                      return ListTileWidget(
+                        ontap: () {
+                          Navigator.pushNamed(
+                            context,
+                            Routes.pokeinfo,
+                            arguments: controller.pokemons[index],
+                          );
+                        },
+                        pokemon: controller.pokemons[index],
+                      );
+                    },
                   ),
-                ],
-              ),
-            )
-          ],
-        ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

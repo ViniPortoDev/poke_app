@@ -7,10 +7,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
-      toolbarHeight: 100,
-      centerTitle: true,
-      backgroundColor: Colors.white,
       leading: Padding(
         padding: const EdgeInsets.only(left: 8),
         child: IconButton(
@@ -18,7 +14,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(
             LineIcons.bars,
             size: 40,
-            color: Color(0xff6E6E6E),
+           
           ),
         ),
       ),
@@ -38,7 +34,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 16,
-              color: Colors.black,
+              
             ),
           ),
         ],

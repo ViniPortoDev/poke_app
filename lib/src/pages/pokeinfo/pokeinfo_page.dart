@@ -25,8 +25,6 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
         toolbarHeight: 85,
         leading: IconButton(
           onPressed: () {
@@ -153,10 +151,10 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                       alignment: Alignment.bottomLeft,
                       children: [
                         SizedBox(
-                          height: 300,
-                          width: 70,
+                          height: 340,
+                          width: 75,
                           child: Padding(
-                            padding: const EdgeInsets.only(top: 24),
+                            padding: const EdgeInsets.symmetric(vertical: 24),
                             child: ListView.builder(
                               itemCount: pokemon.galleryImages.length,
                               itemBuilder: (context, index) {
@@ -168,8 +166,8 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                           ),
                         ),
                         Container(
-                          width: 70,
-                          height: 6,
+                          width: 75,
+                          height: 40,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             gradient: LinearGradient(
@@ -229,7 +227,6 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 12),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(

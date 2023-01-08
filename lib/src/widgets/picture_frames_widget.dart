@@ -9,11 +9,13 @@ class PictureFramesWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Container(
-        width: 70,
-        height: 70,
+        width: 75,
+        height: 75,
         decoration: BoxDecoration(
           border: Border.all(
-              color: const Color.fromARGB(255, 223, 223, 223), width: 2,),
+            color: const Color.fromARGB(255, 223, 223, 223),
+            width: 2,
+          ),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Image.asset(
