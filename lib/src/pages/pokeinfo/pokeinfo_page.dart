@@ -17,6 +17,7 @@ class PokeinfoPage extends StatefulWidget {
 class _PokeinfoPageState extends State<PokeinfoPage> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     late final PokemonModel pokemon;
     final arguments = ModalRoute.of(context)?.settings.arguments;
     if (arguments != null) {
@@ -70,7 +71,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
         ],
       ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        height: size.height,
         color: Colors.white,
         child: SingleChildScrollView(
           child: Column(
