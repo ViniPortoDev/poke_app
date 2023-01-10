@@ -75,6 +75,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
         color: Colors.white,
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -168,7 +169,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                         ),
                         Container(
                           width: 75,
-                          height: 40,
+                          height: 50,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             gradient: LinearGradient(

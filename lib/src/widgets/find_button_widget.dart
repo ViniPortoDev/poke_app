@@ -11,15 +11,15 @@ class FindButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {},
       child: Container(
         height: 70,
-        width: size.width * 0.5,
+        width: 200,
         decoration: const BoxDecoration(
-            color: Color(0xffFF5F50),
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(60)),),
+          color: Color(0xffFF5F50),
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(60)),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -32,9 +32,10 @@ class FindButtonWidget extends StatelessWidget {
             Text(
               text,
               style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,),
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),

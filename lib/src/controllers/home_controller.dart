@@ -17,7 +17,7 @@ class HomeController {
   List<PokemonModel> pokemons = [
     PokemonModel(
       id: 0,
-      name: 'Bubasaur',
+      name: 'Bulbasauro',
       avatarImage: 'assets/images/Bulbasaur.png',
       type: 'Glass/Poison',
       descripton: '''

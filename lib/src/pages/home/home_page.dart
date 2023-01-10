@@ -47,7 +47,7 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                 ),
                 const SizedBox(height: 30),
                 SizedBox(
-                  height: size.height - 234,
+                  height: size.height - 220,
                   child: ListView.builder(
                     itemCount: controller.pokemons.length,
                     itemBuilder: (context, index) {

@@ -87,7 +87,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 8),
                           child: SizedBox(
-                            width: size.width * 0.5,
+                            width: size.width * 0.35,
                             child: RichText(
                               overflow: TextOverflow.ellipsis,
                               maxLines: 3,
