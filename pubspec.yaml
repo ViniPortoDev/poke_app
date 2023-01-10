@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutterando_analysis: ^0.0.2
+  line_icons: ^2.0.0
   
 dev_dependencies:
   flutter_test:
@@ -63,8 +64,14 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/images/
-  #   - images/a_dot_ham.jpeg
-
+   - assets/images/charmander/ 
+   - assets/images/backgrounds/
+   - assets/images/bulbasaur/
+   - assets/images/ekans/   
+   - assets/images/pidgay/
+   - assets/images/squirtle/
+   - assets/images/pikachu/
+       
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -77,9 +84,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Montserrat
-      fonts:
-        - asset: assets\fonts\Montserrat.ttf
     - family: Roboto
       fonts:
         - asset: assets\fonts\Roboto.ttf
