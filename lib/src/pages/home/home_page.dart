@@ -16,7 +16,7 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final controller = HomeController();
+    final _controller = HomeController();
 
     return Scaffold(
       appBar: const AppBarWidget(),
@@ -34,12 +34,12 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                   height: 50,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: controller.filterList.length,
+                    itemCount: _controller.filterList.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(left: 18),
                         child: FilterButtonWidget(
-                          filterModel: controller.filterList[index],
+                          filterModel: _controller.filterList[index],
                         ),
                       );
                     },
@@ -49,17 +49,17 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
                 SizedBox(
                   height: size.height - 220,
                   child: ListView.builder(
-                    itemCount: controller.pokemons.length,
+                    itemCount: _controller.pokemons.length,
                     itemBuilder: (context, index) {
                       return ListTileWidget(
                         ontap: () {
                           Navigator.pushNamed(
                             context,
                             Routes.pokeinfo,
-                            arguments: controller.pokemons[index],
+                            arguments: _controller.pokemons[index],
                           );
                         },
-                        pokemon: controller.pokemons[index],
+                        pokemon: _controller.pokemons[index],
                       );
                     },
                   ),

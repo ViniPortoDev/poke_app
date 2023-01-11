@@ -5,7 +5,7 @@ import '../../models/pokemon_model.dart';
 import '../../widgets/picture_frames_widget.dart';
 
 class PokeinfoPage extends StatefulWidget {
-  final controller = HomeController();
+  final _controller = HomeController();
   PokeinfoPage({
     Key? key,
   }) : super(key: key);
@@ -19,9 +19,9 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     late final PokemonModel pokemon;
-    final arguments = ModalRoute.of(context)?.settings.arguments;
-    if (arguments != null) {
-      pokemon = arguments as PokemonModel;
+    final _arguments = ModalRoute.of(context)?.settings.arguments;
+    if (_arguments != null) {
+      pokemon = _arguments as PokemonModel;
     }
 
     return Scaffold(
@@ -194,7 +194,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                               height: 350,
                               width: 350,
                               decoration: BoxDecoration(
-                                color: widget.controller.getColor(pokemon),
+                                color: widget._controller.getColor(pokemon),
                                 borderRadius: BorderRadius.circular(500),
                               ),
                             ),
