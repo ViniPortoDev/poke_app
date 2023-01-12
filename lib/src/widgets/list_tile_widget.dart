@@ -25,6 +25,8 @@ class _ListTileWidgetState extends State<ListTileWidget> {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: Container(
+          height: 500,
+          width: 400,
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -69,10 +71,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                         const SizedBox(height: 6),
                         Text(
                           widget.pokemon.name,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
+                          style: Theme.of(context).textTheme.headline4,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8, bottom: 8),
@@ -111,10 +110,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                             const SizedBox(width: 4),
                             Text(
                               widget.pokemon.localization,
-                              style: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
+                              style: Theme.of(context).textTheme.headline1,
                             ),
                           ],
                         ),

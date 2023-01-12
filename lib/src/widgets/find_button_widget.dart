@@ -16,7 +16,7 @@ class FindButtonWidget extends StatelessWidget {
       child: Container(
         height: 70,
         width: 200,
-        decoration: const BoxDecoration(
+        decoration: const BoxDecoration( 
           color: Color(0xffFF5F50),
           borderRadius: BorderRadius.only(topLeft: Radius.circular(60)),
         ),

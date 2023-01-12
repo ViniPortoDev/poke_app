@@ -21,16 +21,12 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         ),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               'Localização',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 12,
-                color: Color(0xffC8C8C8),
-              ),
+              style: Theme.of(context).textTheme.headline2,
             ),
-            Text(
+            const Text(
               'Parnaíba-PI, Brasil',
               style: TextStyle(
                 fontWeight: FontWeight.w600,

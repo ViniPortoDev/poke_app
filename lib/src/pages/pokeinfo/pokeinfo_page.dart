@@ -1,12 +1,11 @@
-import 'package:desafio02/src/controllers/home_controller.dart';
 import 'package:desafio02/src/widgets/find_button_widget.dart';
+import 'package:desafio02/src/widgets/gallery_widget.dart';
+import 'package:desafio02/src/widgets/pokemon_selected_info_widget.dart';
 import 'package:flutter/material.dart';
 import '../../models/pokemon_model.dart';
-import '../../widgets/picture_frames_widget.dart';
 
 class PokeinfoPage extends StatefulWidget {
-  final _controller = HomeController();
-  PokeinfoPage({
+const  PokeinfoPage({
     Key? key,
   }) : super(key: key);
 
@@ -34,7 +33,6 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
           icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             size: 40,
-            color: Color(0xff6F6F6F),
           ),
         ),
         actions: [
@@ -67,12 +65,11 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
-      body: Container(
+      body: SizedBox(
         height: size.height,
-        color: Colors.white,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,17 +81,13 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   children: [
                     Text(
                       pokemon.name,
-                      style: const TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                     Icon(
                       pokemon.gender == PokemonGender.male
                           ? Icons.male
                           : Icons.female,
                       size: 35,
-                      color: const Color(0xffCBCBCB),
                     )
                   ],
                 ),
@@ -107,17 +100,11 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   children: [
                     Text(
                       pokemon.type,
-                      style: const TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                     Text(
                       pokemon.number,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                   ],
                 ),
@@ -135,9 +122,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                     const SizedBox(width: 4),
                     Text(
                       pokemon.localization,
-                      style: const TextStyle(
-                        color: Color(0xffB0B0B0),
-                      ),
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                   ],
                 ),
@@ -149,83 +134,8 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Stack(
-                      alignment: Alignment.bottomLeft,
-                      children: [
-                        SizedBox(
-                          height: 340,
-                          width: 75,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 24),
-                            child: ListView.builder(
-                              itemCount: pokemon.galleryImages.length,
-                              itemBuilder: (context, index) {
-                                return PictureFramesWidget(
-                                  images: pokemon.galleryImages[index],
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 75,
-                          height: 50,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            gradient: LinearGradient(
-                              colors: [
-                                Color.fromARGB(0, 255, 255, 255),
-                                Colors.white,
-                              ],
-                              begin: Alignment.topRight,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 350,
-                      child: Stack(
-                        alignment: Alignment.centerRight,
-                        children: [
-                          Positioned(
-                            left: 0,
-                            child: Container(
-                              height: 350,
-                              width: 350,
-                              decoration: BoxDecoration(
-                                color: widget._controller.getColor(pokemon),
-                                borderRadius: BorderRadius.circular(500),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 55,
-                            right: 0,
-                            child: Container(
-                              width: 210,
-                              height: 55,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(500),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    color: Color.fromARGB(52, 0, 0, 0),
-                                    blurRadius: 10,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Image.asset(
-                            pokemon.avatarImage,
-                            height: 250,
-                            width: 250,
-                            cacheWidth: 240,
-                            alignment: Alignment.centerRight,
-                          ),
-                        ],
-                      ),
-                    )
+                    GalleryWidget(pokemon: pokemon),
+                    PokemonSelectedImage(pokemon: pokemon),
                   ],
                 ),
               ),
@@ -234,15 +144,14 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Sobre',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.headline5,
                     ),
                     const SizedBox(height: 6),
                     Text(
                       pokemon.descripton,
-                      style: const TextStyle(color: Color(0xffB0B0B0)),
+                      style: Theme.of(context).textTheme.headline2,
                     )
                   ],
                 ),
