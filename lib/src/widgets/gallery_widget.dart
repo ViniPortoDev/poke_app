@@ -9,39 +9,46 @@ class GalleryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomLeft,
-      children: [
-        SizedBox(
-          height: 340,
-          width: 75,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24),
-            child: ListView.builder(
-              itemCount: pokemon.galleryImages.length,
-              itemBuilder: (context, index) {
-                return PictureFramesWidget(
-                  image: pokemon.galleryImages[index],
-                );
-              },
+    final size = MediaQuery.of(context).size;
+    return SizedBox(
+      height: size.height,
+      child: Stack(
+        alignment: Alignment.bottomLeft,
+        children: [
+          SizedBox(
+            width: 75,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 24),
+              child: CustomScrollView(slivers: [
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: pokemon.galleryImages.length,
+                    (context, index) {
+                      return PictureFramesWidget(
+                        image: pokemon.galleryImages[index],
+                      );
+                    },
+                  ),
+                ),
+              ],),
             ),
           ),
-        ),
-        Container(
-          width: 75,
-          height: 50,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(0, 255, 255, 255),
-                Colors.white,
-              ],
-              begin: Alignment.topRight,
+          Container(
+            width: 75,
+            height: 50,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(0, 255, 255, 255),
+                  Colors.white,
+                ],
+                begin: Alignment.topRight,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

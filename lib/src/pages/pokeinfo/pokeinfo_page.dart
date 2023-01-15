@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../models/pokemon_model.dart';
 
 class PokeinfoPage extends StatefulWidget {
-const  PokeinfoPage({
+  const PokeinfoPage({
     Key? key,
   }) : super(key: key);
 
@@ -72,7 +72,6 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
         height: size.height,
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -130,13 +129,16 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
               const SizedBox(height: 12),
               Padding(
                 padding: const EdgeInsets.only(left: 24),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GalleryWidget(pokemon: pokemon),
-                    PokemonSelectedImage(pokemon: pokemon),
-                  ],
+                child: SizedBox(
+                  height: 350,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GalleryWidget(pokemon: pokemon),
+                      PokemonSelectedImage(pokemon: pokemon),
+                    ],
+                  ),
                 ),
               ),
               Padding(
@@ -158,14 +160,15 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
               ),
               const SizedBox(height: 16),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
                   FindButtonWidget(
                     icon: Icons.catching_pokemon_outlined,
                     text: 'Encontrar',
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),

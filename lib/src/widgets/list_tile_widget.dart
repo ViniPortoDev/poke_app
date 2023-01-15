@@ -23,10 +23,9 @@ class _ListTileWidgetState extends State<ListTileWidget> {
     return InkWell(
       onTap: widget.ontap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
         child: Container(
-          height: 500,
-          width: 400,
+          width: size.width,
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -36,101 +35,106 @@ class _ListTileWidgetState extends State<ListTileWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        height: 135,
-                        width: 130,
-                        decoration: BoxDecoration(
-                          color: widget.controller.getColor(widget.pokemon),
-                          borderRadius: BorderRadius.circular(22),
-                        ),
-                        child: Image.asset(widget.pokemon.avatarImage),
-                      ),
-                      Positioned(
-                        bottom: 10,
-                        child: Container(
-                          width: 110,
-                          height: 5,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(36),
-                            boxShadow: const [BoxShadow(blurRadius: 10)],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              SizedBox(
+                width: size.width * 0.742,
+                child: Row(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
                       children: [
-                        const SizedBox(height: 6),
-                        Text(
-                          widget.pokemon.name,
-                          style: Theme.of(context).textTheme.headline4,
+                        Container(
+                          width: size.width * 0.3,
+                          decoration: BoxDecoration(
+                            color: widget.controller.getColor(widget.pokemon),
+                            borderRadius: BorderRadius.circular(22),
+                          ),
+                          child: Image.asset(widget.pokemon.avatarImage),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8, bottom: 8),
-                          child: Text(
-                            widget.pokemon.type,
-                            style: const TextStyle(
-                              fontSize: 13,
-                              color: Colors.black,
+                        Positioned(
+                          bottom: 10,
+                          child: Container(
+                            width: size.width * 0.25,
+                            height: 5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(36),
+                              boxShadow: const [BoxShadow(blurRadius: 10)],
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
-                          child: SizedBox(
-                            width: size.width * 0.35,
-                            child: RichText(
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 3,
-                              text: TextSpan(
-                                text: widget.pokemon.descripton,
-                                style: const TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.grey,
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 6),
+                          Text(
+                            widget.pokemon.name,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            child: Text(
+                              widget.pokemon.type,
+                              style: const TextStyle(
+                                fontSize: 13,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: SizedBox(
+                              width: size.width * 0.40,
+                              child: RichText(
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 3,
+                                text: TextSpan(
+                                  text: widget.pokemon.descripton,
+                                  style: const TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.grey,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.location_on,
-                              color: Colors.red,
-                              size: 18,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              widget.pokemon.localization,
-                              style: Theme.of(context).textTheme.headline1,
-                            ),
-                          ],
-                        ),
-                      ],
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.location_on,
+                                color: Colors.red,
+                                size: 18,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                widget.pokemon.localization,
+                                style: Theme.of(context).textTheme.headline1,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              IconButton(
-                onPressed: () {
-                  setState(() {
-                    widget.pokemon.isFavorite = !widget.pokemon.isFavorite;
-                  });
-                },
-                icon: Icon(
-                  widget.pokemon.isFavorite
-                      ? Icons.favorite
-                      : Icons.favorite_border,
-                  color: widget.pokemon.isFavorite ? Colors.red : Colors.grey,
-                  size: 30,
+              SizedBox(
+                width: size.width * 0.1,
+                child: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      widget.pokemon.isFavorite = !widget.pokemon.isFavorite;
+                    });
+                  },
+                  icon: Icon(
+                    widget.pokemon.isFavorite
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: widget.pokemon.isFavorite ? Colors.red : Colors.grey,
+                    size: 30,
+                  ),
                 ),
               ),
             ],
