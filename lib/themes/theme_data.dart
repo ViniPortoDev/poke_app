@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class PokeThemeData {
   static ThemeData lightTheme = ThemeData(
+    cardColor: Colors.white,
     fontFamily: 'Roboto',
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
@@ -47,6 +48,7 @@ class PokeThemeData {
     ),
   );
   static ThemeData darkTheme = ThemeData(
+    cardColor: Colors.black,
     appBarTheme: const AppBarTheme(
       titleTextStyle: TextStyle(color: Colors.white),
       elevation: 0,

@@ -28,7 +28,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           width: size.width,
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(22),
           ),
           child: Row(
