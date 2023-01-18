@@ -8,9 +8,10 @@ class FilterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final controller = HomeController();
     return SizedBox(
-      height: 50,
+      height: size.width * 0.128,
       child: CustomScrollView(
         scrollDirection: Axis.horizontal,
         slivers: [
@@ -19,7 +20,9 @@ class FilterWidget extends StatelessWidget {
               childCount: controller.filterList.length,
               (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(left: 18),
+                  padding: EdgeInsets.only(
+                    right: size.width * 0.042,
+                  ),
                   child: FilterButtonWidget(
                     filterModel: controller.filterList[index],
                   ),

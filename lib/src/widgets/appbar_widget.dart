@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
+  final double size;
+  const AppBarWidget({Key? key, required this.size}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SizedBox(
-      height: 110,
+      height: size.width * 0.277,
       child: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 8),
           child: IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               LineIcons.bars,
-              size: 40,
+              size: size.width * 0.095,
             ),
           ),
         ),
@@ -37,12 +39,12 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: size.width * 0.053),
             child: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
                   'assets/images/manoash_gomes.jpeg',
-                  height: 40,
+                  height: size.width * 0.1,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -54,5 +56,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => Size.fromHeight(size);
 }

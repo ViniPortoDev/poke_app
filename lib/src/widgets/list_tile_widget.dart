@@ -23,37 +23,41 @@ class _ListTileWidgetState extends State<ListTileWidget> {
     return InkWell(
       onTap: widget.ontap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+        padding: EdgeInsets.only(
+          bottom: size.width * 0.048,
+          left: size.width * 0.069,
+          right: size.width * 0.069,
+        ),
         child: Container(
-          width: size.width,
-          padding: const EdgeInsets.all(8),
+          width: size.width * 0.85,
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
-            borderRadius: BorderRadius.circular(22),
+            borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                width: size.width * 0.742,
-                child: Row(
-                  children: [
-                    Stack(
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(size.width * 0.026),
+                    child: Stack(
                       alignment: Alignment.center,
                       children: [
                         Container(
-                          width: size.width * 0.3,
+                          width: size.width * 0.27,
                           decoration: BoxDecoration(
                             color: widget.controller.getColor(widget.pokemon),
-                            borderRadius: BorderRadius.circular(22),
+                            borderRadius: BorderRadius.circular(18),
                           ),
                           child: Image.asset(widget.pokemon.avatarImage),
                         ),
                         Positioned(
                           bottom: 10,
                           child: Container(
-                            width: size.width * 0.25,
+                            width: size.width * 0.23,
                             height: 5,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(36),
@@ -63,18 +67,24 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: size.width * 0.048,
+                    ),
+                    child: SizedBox(
+                      width: size.width * 0.293,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(height: 6),
                           Text(
                             widget.pokemon.name,
                             style: Theme.of(context).textTheme.headline4,
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            padding: EdgeInsets.symmetric(
+                              vertical: size.width * 0.026,
+                            ),
                             child: Text(
                               widget.pokemon.type,
                               style: const TextStyle(
@@ -83,23 +93,18 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: SizedBox(
-                              width: size.width * 0.40,
-                              child: RichText(
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 3,
-                                text: TextSpan(
-                                  text: widget.pokemon.descripton,
-                                  style: const TextStyle(
-                                    fontSize: 11,
-                                    color: Colors.grey,
-                                  ),
-                                ),
+                          RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            text: TextSpan(
+                              text: widget.pokemon.descripton,
+                              style: const TextStyle(
+                                fontSize: 11,
+                                color: Colors.grey,
                               ),
                             ),
                           ),
+                          SizedBox(height: size.width * 0.013),
                           Row(
                             children: [
                               const Icon(
@@ -117,11 +122,14 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                         ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              SizedBox(
-                width: size.width * 0.1,
+              Padding(
+                padding: EdgeInsets.only(
+                  top: size.width * 0.026,
+                  right: size.width * 0.026,
+                ),
                 child: IconButton(
                   onPressed: () {
                     setState(() {
@@ -133,7 +141,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                         ? Icons.favorite
                         : Icons.favorite_border,
                     color: widget.pokemon.isFavorite ? Colors.red : Colors.grey,
-                    size: 30,
+                    size: size.width * 0.064,
                   ),
                 ),
               ),

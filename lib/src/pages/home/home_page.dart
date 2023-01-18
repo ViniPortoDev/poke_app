@@ -15,20 +15,25 @@ class _PokemonHomePageState extends State<PokemonHomePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const AppBarWidget(),
+      appBar: AppBarWidget(size: size.width * 0.277),
       body: Container(
         height: size.height,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondary,
-          borderRadius: BorderRadius.circular(22),
+          borderRadius: BorderRadius.circular(16),
         ),
         child: SingleChildScrollView(
           child: Column(
-            children: const [
-              SizedBox(height: 30),
-              FilterWidget(),
-              SizedBox(height: 30),
-              PokemonsWidget(),
+            children: [
+              SizedBox(height: size.width * 0.058),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: size.width * 0.074,
+                ),
+                child: const FilterWidget(),
+              ),
+              SizedBox(height: size.width * 0.069),
+              const PokemonsWidget(),
             ],
           ),
         ),

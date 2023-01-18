@@ -16,6 +16,7 @@ class FilterButtonWidget extends StatefulWidget {
 class _ButtonWidgetState extends State<FilterButtonWidget> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
         setState(() {
@@ -23,19 +24,19 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
         });
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: size.width * 0.037),
         decoration: BoxDecoration(
           color: widget.filterModel.isSelected
               ? const Color(0xffFF5F50)
               : Colors.white,
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               widget.filterModel.icon,
-              size: 30,
+              size: size.width * 0.064,
               color: widget.filterModel.isSelected ? Colors.white : Colors.grey,
             ),
             Visibility(
