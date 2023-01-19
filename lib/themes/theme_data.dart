@@ -23,26 +23,27 @@ class PokeThemeData {
       color: Color(0xffCBCBCB),
     ),
     textTheme: const TextTheme(
-      headline1: TextStyle(color: Colors.grey, fontSize: 12),
-      headline2: TextStyle(color: Color(0xffB0B0B0), fontSize: 14),
+      headline1: TextStyle(
+        color: Colors.grey, fontSize: 14 ,),
+      headline2: TextStyle(color: Color(0xffB0B0B0), fontSize: 16),
       headline3: TextStyle(
         fontWeight: FontWeight.w500,
-        fontSize: 18,
+        fontSize: 22,
         color: Colors.black,
       ),
       headline4: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 20,
+        fontSize: 24,
         color: Colors.black,
       ),
       headline5: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 24,
+        fontSize: 32,
         color: Colors.black,
       ),
       headline6: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 32,
+        fontSize: 44,
         color: Colors.black,
       ),
     ),

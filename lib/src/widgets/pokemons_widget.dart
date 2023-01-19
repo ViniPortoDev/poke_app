@@ -12,26 +12,28 @@ class PokemonsWidget extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final controller = HomeController();
     return SizedBox(
-      height: size.height - 220,
-      child: CustomScrollView(slivers: [
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            childCount: controller.pokemons.length,
-            (context, index) {
-              return ListTileWidget(
-                ontap: () {
-                  Navigator.pushNamed(
-                    context,
-                    Routes.pokeinfo,
-                    arguments: controller.pokemons[index],
-                  );
-                },
-                pokemon: controller.pokemons[index],
-              );
-            },
+      height: size.height - 250,
+      child: CustomScrollView(
+        slivers: [
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              childCount: controller.pokemons.length,
+              (context, index) {
+                return ListTileWidget(
+                  ontap: () {
+                    Navigator.pushNamed(
+                      context,
+                      Routes.pokeinfo,
+                      arguments: controller.pokemons[index],
+                    );
+                  },
+                  pokemon: controller.pokemons[index],
+                );
+              },
+            ),
           ),
-        ),
-      ],),
+        ],
+      ),
     );
   }
 }

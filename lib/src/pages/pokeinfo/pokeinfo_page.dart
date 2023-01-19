@@ -16,6 +16,7 @@ class PokeinfoPage extends StatefulWidget {
 class _PokeinfoPageState extends State<PokeinfoPage> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final theme = Theme.of(context);
     late final PokemonModel pokemon;
     final _arguments = ModalRoute.of(context)?.settings.arguments;
@@ -25,14 +26,14 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
 
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 85,
+        toolbarHeight: size.width * 0.229,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.keyboard_arrow_left_rounded,
-            size: 40,
+            size: size.width * 0.098,
           ),
         ),
         actions: [
@@ -40,12 +41,12 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
             alignment: Alignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 18),
+                padding: EdgeInsets.only(right: size.width * 0.074),
                 child: Container(
-                  height: 45,
-                  width: 45,
+                  height: size.width * 0.117,
+                  width: size.width * 0.117,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(14),
                     color: const Color(0xffFFE6E3),
                   ),
                   child: IconButton(
@@ -59,7 +60,7 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                           ? Icons.favorite
                           : Icons.favorite_border,
                       color: pokemon.isFavorite ? Colors.red : Colors.grey,
-                      size: 30,
+                      size: size.width * 0.069,
                     ),
                   ),
                 ),
@@ -70,14 +71,16 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
       ),
       body: LayoutBuilder(
         builder: (_, constraints) {
-          return SingleChildScrollView(
-            child: SizedBox(
-              height: constraints.maxHeight,
+          return SizedBox(
+            height: size.height,
+            child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: size.width * 0.074,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -89,14 +92,16 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                           pokemon.gender == PokemonGender.male
                               ? Icons.male
                               : Icons.female,
-                          size: 35,
+                          size: size.width * 0.074,
                         )
                       ],
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: size.width * 0.024),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: size.width * 0.074,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -111,9 +116,11 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: size.width * 0.024),
                   Padding(
-                    padding: const EdgeInsets.only(left: 24),
+                    padding: EdgeInsets.only(
+                      left: size.width * 0.069,
+                    ),
                     child: Row(
                       children: [
                         const Icon(
@@ -129,11 +136,12 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 12),
                   Padding(
-                    padding: const EdgeInsets.only(left: 24),
+                    padding: EdgeInsets.only(
+                      left: size.width * 0.074,
+                    ),
                     child: SizedBox(
-                      height: 350,
+                      height: size.width * 1.01,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,26 +152,30 @@ class _PokeinfoPageState extends State<PokeinfoPage> {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Sobre',
-                            style: theme.textTheme.headline5,
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: size.width * 0.074),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Sobre',
+                          style: theme.textTheme.headline5,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          
+                          pokemon.descripton,
+                          style: const TextStyle(
+                            height: 1.6,
+                            color: Color(0xffB0B0B0),
+                            fontSize: 18,
                           ),
-                          const SizedBox(height: 6),
-                          Text(
-                            pokemon.descripton,
-                            style: theme.textTheme.headline2,
-                          )
-                        ],
-                      ),
+                        )
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: size.width * 0.074),
                   const Align(
                     alignment: Alignment.bottomRight,
                     child: FindButtonWidget(

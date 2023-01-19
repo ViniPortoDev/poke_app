@@ -6,22 +6,23 @@ class PictureFramesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
+      padding: EdgeInsets.only(bottom: size.width * 0.048),
       child: Container(
-        width: 75,
-        height: 75,
+        width: size.width * 0.192,
+        height: size.width * 0.192,
         decoration: BoxDecoration(
           border: Border.all(
             color: const Color.fromARGB(255, 223, 223, 223),
             width: 2,
           ),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(14),
         ),
         child: Image.asset(
           image,
-          width: 32,
-          height: 32,
+          width: size.width * 0.085,
+          height: size.width * 0.085,
         ),
       ),
     );

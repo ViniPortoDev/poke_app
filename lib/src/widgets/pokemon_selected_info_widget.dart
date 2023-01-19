@@ -14,15 +14,15 @@ class PokemonSelectedImage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final controller = HomeController();
     return SizedBox(
-      height: 350,
+      height: size.width * 1.01,
       child: Stack(
         alignment: Alignment.centerRight,
         children: [
           Positioned(
             left: size.height * 0.01,
             child: Container(
-              height: 350,
-              width: size.width * 0.9,
+              height: size.width * 0.928,
+              width: size.width * 0.928,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: controller.getColor(pokemon),
@@ -48,8 +48,8 @@ class PokemonSelectedImage extends StatelessWidget {
           ),
           Image.asset(
             pokemon.avatarImage,
-            height: size.height * 0.6,
-            width: size.width * 0.6,
+            height: size.height * 0.901,
+            width: size.width * 0.731,
             alignment: Alignment.centerRight,
           ),
         ],

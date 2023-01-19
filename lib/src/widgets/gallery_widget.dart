@@ -16,26 +16,28 @@ class GalleryWidget extends StatelessWidget {
         alignment: Alignment.bottomLeft,
         children: [
           SizedBox(
-            width: 75,
+            width: size.width * 0.192,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 24),
-              child: CustomScrollView(slivers: [
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    childCount: pokemon.galleryImages.length,
-                    (context, index) {
-                      return PictureFramesWidget(
-                        image: pokemon.galleryImages[index],
-                      );
-                    },
+              padding: EdgeInsets.symmetric(vertical: size.width * 0.096),
+              child: CustomScrollView(
+                slivers: [
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      childCount: pokemon.galleryImages.length,
+                      (context, index) {
+                        return PictureFramesWidget(
+                          image: pokemon.galleryImages[index],
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ],),
+                ],
+              ),
             ),
           ),
           Container(
-            width: 75,
-            height: 50,
+            width: size.width * 0.192,
+            height: size.width * 0.192,
             decoration: const BoxDecoration(
               color: Colors.white,
               gradient: LinearGradient(

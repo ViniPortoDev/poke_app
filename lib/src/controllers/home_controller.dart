@@ -117,7 +117,7 @@ Há uma semente de planta em suas costas desde o dia em que este Pokémon nasceu
       type: 'Eletric',
       descripton:
           '''Pikachu que pode gerar eletricidade poderosa tem bolsas nas bochechas que são extra macias e super elásticas.''',
-      localization: '14.8 km de distância',
+      localization: '9.8 km de distância',
       backgroundColor: 'assets/images/backgrounds/fundo_amarelo.png',
       backgroundAvatarColor: BackgroundAvatarColor.yellow,
       gender: PokemonGender.male,

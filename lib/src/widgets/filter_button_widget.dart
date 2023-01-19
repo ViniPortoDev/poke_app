@@ -46,7 +46,7 @@ class _ButtonWidgetState extends State<FilterButtonWidget> {
             Text(
               widget.filterModel.text,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 22,
                 color:
                     widget.filterModel.isSelected ? Colors.white : Colors.black,
               ),

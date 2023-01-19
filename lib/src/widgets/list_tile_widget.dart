@@ -29,6 +29,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           right: size.width * 0.069,
         ),
         child: Container(
+          height: size.width * 0.32,
           width: size.width * 0.85,
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
@@ -73,53 +74,63 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                       top: size.width * 0.048,
                     ),
                     child: SizedBox(
+                      height: size.width * 0.27,
                       width: size.width * 0.293,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.pokemon.name,
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: size.width * 0.026,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.pokemon.name,
+                              style: Theme.of(context).textTheme.headline4,
                             ),
-                            child: Text(
-                              widget.pokemon.type,
-                              style: const TextStyle(
-                                fontSize: 13,
-                                color: Colors.black,
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                vertical: size.width * 0.02,
                               ),
-                            ),
-                          ),
-                          RichText(
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
-                            text: TextSpan(
-                              text: widget.pokemon.descripton,
-                              style: const TextStyle(
-                                fontSize: 11,
-                                color: Colors.grey,
+                              child: Text(
+                                widget.pokemon.type,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(height: size.width * 0.013),
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.location_on,
-                                color: Colors.red,
-                                size: 18,
+                            RichText(
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              text: TextSpan(
+                                text: widget.pokemon.descripton,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                               ),
-                              const SizedBox(width: 4),
-                              Text(
-                                widget.pokemon.localization,
-                                style: Theme.of(context).textTheme.headline1,
-                              ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            SizedBox(height: size.width * 0.02),
+                            Row(
+                              children: [
+                                const Icon(
+                                  Icons.location_on,
+                                  color: Colors.red,
+                                  size: 18,
+                                ),
+                                const SizedBox(width: 4),
+                                SizedBox(
+                                  width: size.width * 0.186,
+                                  child: RichText(
+                                    overflow: TextOverflow.ellipsis,
+                                    text: TextSpan(
+                                      text: widget.pokemon.localization,
+                                      style:
+                                          Theme.of(context).textTheme.headline1,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
